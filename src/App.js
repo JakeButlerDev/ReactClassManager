@@ -3,11 +3,14 @@ import './App.css';
 import Test from './components/Test/Test';
 import AppRouter from './components/Routers/AppRouter';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './components/Providers/AuthProvider';
 
 function App() {
   return (
     <BrowserRouter>
-      <AppRouter />
+      <AuthProvider>
+        <AppRouter />
+      </AuthProvider>
     </BrowserRouter>
   );
 }

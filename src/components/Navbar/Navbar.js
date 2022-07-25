@@ -1,7 +1,9 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import NavButton from "./NavButton";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Navbar = (props) => {
+    const [auth] = useContext(AuthContext);
     return (
         <Fragment>
             <div style={{
@@ -29,10 +31,20 @@ const Navbar = (props) => {
                     userSelect: 'none',
                     alignItems: 'center'
                 }}>
+                    {auth.id ? (
+                        <p>Hi, {auth.name}</p>
+                    ) : null }
                     <NavButton to="/" label='Home' />
-                    <NavButton to="/login" label='Login' />
-                    <NavButton to="/students" label='Directory' />
-                    <NavButton to="/profile" label='Profile' />
+                    {auth.id ? (
+                        <Fragment>
+                            <NavButton to="/students" label='Directory' />
+                            <NavButton to="/profile" label='Profile' />
+                            <NavButton to="/payfees" label='Pay Fees' />
+                        </Fragment>
+                    ) : (
+                        <NavButton to="/login" label='Login' />
+                    )}
+                    
                 </div>
             </div>
         <div style={{height: '75px'}} />

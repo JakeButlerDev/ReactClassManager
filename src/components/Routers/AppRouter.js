@@ -7,6 +7,7 @@ import Self from '../Student/Self';
 import Login from '../Auth/Login';
 import Navbar from '../Navbar/Navbar';
 import NavButton from '../Navbar/NavButton';
+import PayFees from '../Student/PayFees';
 
 const AppRouter = () => {
 
@@ -25,6 +26,7 @@ const AppRouter = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Self />} />
                 <Route path="/students" element={<Students />} />
+                <Route path="/payfees" element={<PayFees />} />
             </Routes>
         </Container>
     )
