@@ -1,3 +1,10 @@
+Current functionality:
+Home screen.
+Login in (password not checked, auto auth as long as student id is in database.
+See directory of students after being logged in.
+Log out if currently logged in.
+Individual student can pay fees (after being logged in), fees will post to database.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
